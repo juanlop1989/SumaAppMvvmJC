@@ -1,0 +1,24 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:SumaAppMvvmJC.ViewModels"
+             x:Class="SumaAppMvvmJC.Views.SumaPage"
+             Title="SUMA">
+
+    <ContentPage.BindingContext>
+        <vm:SumaViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20" Spacing="20">
+        <Label Text="Numero 1:" />
+        <Entry Text="{Binding Number1, Mode=TwoWay}" Keyboard="Numeric" />
+
+        <Label Text="Numero 2:" />
+        <Entry Text="{Binding Number2, Mode=TwoWay}" Keyboard="Numeric" />
+
+        <Label Text="Resultado:" FontAttributes="Bold"/>
+        <Label Text="{Binding Result}" FontAttributes="Bold"/>
+
+        <Button Text="Calcular" Command="{Binding CalculateCommand}" />
+        <Button Text="Limpiar" Command="{Binding ClearCommand}" Background="Red"/>
+    </StackLayout>
+</ContentPage>
